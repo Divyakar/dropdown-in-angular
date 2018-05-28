@@ -1,0 +1,28 @@
+<div class="dropdown-wrapper">
+    <div class="search-container ">
+        <div class="multiple-wrapper row">
+            <div class='col-xs-10'>
+                <span class="selecteDataValues" ng-init="initialize()">
+                    <span ng-class='[{"multipleValues":multiple==="true"}]' ng-repeat="x in selectedList track by $index">{{x}}
+                        <span ng-if='multiple==="true"' ng-click='removeItem(x)' class='deleteItem'>x</span>
+                    </span>
+                </span>
+                <input   class='search' type="text" ng-model="letter" ng-click="togglelist()" />
+            </div>
+            <div class='col-xs-2 searchbutton'>
+                <i class="fa fa-chevron-down button" ng-click="showList = !showList"></i>
+            </div>
+        </div>
+        <div class='selectedStates'>
+            selectedStates:
+            <span ng-repeat="x in selectedList track by $index">
+                <span ng-if="$index>0">,</span>{{x}}</span>
+        </div>
+    </div>
+    <ul class="dropdownList" >
+        <li class="myObj" ng-click="setState(x)" ng-class="[{'list-selected':isSelected(x)}]" ng-repeat="x in data |search:letter">
+            {{x.value}}
+        </li>
+    </ul>
+</div>
+</div>

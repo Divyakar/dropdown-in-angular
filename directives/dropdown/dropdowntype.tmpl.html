@@ -1,0 +1,5 @@
+<ul class='list'>
+    <li class='dropdownslist' ng-repeat="x in dropdowntype track by $index" ng-click="listSelect($index)">
+        <a href="{{$index===0?'#!single':'#!multiple'}}">{{x}}</a>
+    </li>
+</ul>

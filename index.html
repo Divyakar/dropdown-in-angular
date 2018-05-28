@@ -1,0 +1,30 @@
+<html>
+<link rel="stylesheet/less" type="text/css" href="styles/dropdownstyles.less" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<body ng-app="myApp">
+    <div ng-controller="dropdownController">
+        <dropdown-heading heading="typeofdropdown"></dropdown-heading>
+        <div class='row dropdown-content'>
+            <div class='col-xs-2 dropdownSelect '>
+                <dropdown-list dropdowntype="dropdownValues" on-change="requiredList(value)"></dropdown-list>
+            </div>
+            <div class='col-xs-10 content' ng-view></div>
+        </div>
+        <div id="closepopup" class="dropdown-overlay hide" ng-click='displayList()'></div>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+<script src="controllers/dropdown/dropdown.js"></script>
+<script src="directives/dropdown/dropdown.js"></script>
+<script src="directives/dropdown/dropdownlist.js"></script>
+<script src="filters/dropdown/filters.js"></script>
+<script src="directives/dropdown/heading.js"></script>
+<script src="server.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.0.0/less.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.js"></script>
+</html>
