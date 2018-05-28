@@ -9,8 +9,6 @@ app.directive("dropdown", function ($rootScope) {
         },
         link: function (scope, element, attrs) {
             scope.showList = false;
-            scope.selectedList = [];
-
         },
         controller: function ($scope, $rootScope) {
             $scope.letter = "";
@@ -58,7 +56,9 @@ app.directive("dropdown", function ($rootScope) {
                 }
                 $(".dropdownList").slideToggle();
             })
-
+            $scope.$watch('selectedList', function (oldValue, newValue) {
+                console.log($scope.selectedList);
+            })
             $scope.togglelist = function () {
                 $scope.showList = !$scope.showList;
             }

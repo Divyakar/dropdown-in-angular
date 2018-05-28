@@ -1,7 +1,7 @@
 var app = angular.module("myApp", ['ngRoute', 'ngAnimate']);
 app.controller('dropdownController', function ($http, $scope, $location, $rootScope) {
     $scope.getData = function () {
-        $http.get('https://api.myjson.com/bins/7fg2v').then(function (response) {
+        $http.get('http://localhost:5800/').then(function (response) {
             $scope.multiDropdownData = response.data.states;
             $scope.singleDropdownData = response.data.countries;
         })
